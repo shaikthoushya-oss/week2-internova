@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trailwise – Weekend Hiking Club</title>
+  <!-- Task 1: External CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation (Flexbox) -->
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="#home" class="logo">Trailwise</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Why join</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#stats">Season</a></li>
+        <li><a href="#contact" class="btn btn-small">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <h1>Walk more. Worry less.</h1>
+    <p>Trailwise runs beginner-friendly hikes every weekend around Andhra Pradesh. Pick a trail, bring water, and we'll bring the company.</p>
+    <a href="#contact" class="btn">Reserve a spot</a>
+  </section>
+
+  <!-- Task 2: Box Model section -->
+  <section id="about" class="section">
+    <h2 class="section-title">About the club</h2>
+    <div class="about-box">
+      <p>Started by six friends in 2019, Trailwise now has over 300 members. Every hike has a trained leader, a sweep walker at the back, and a first-aid kit in the lead pack.</p>
+      <p class="highlight">No hike is longer than 12 km, and nobody is left behind.</p>
+    </div>
+  </section>
+
+  <!-- Task 3: Flexbox cards -->
+  <section id="features" class="section section-alt">
+    <h2 class="section-title">Why people join</h2>
+    <div class="card-row">
+      <article class="card">
+        <h3>Easy pace</h3>
+        <p>Groups move at the speed of the slowest walker, with a rest stop every hour.</p>
+      </article>
+      <article class="card">
+        <h3>Small groups</h3>
+        <p>Maximum 15 people per hike, so you actually get to know who you're walking with.</p>
+      </article>
+      <article class="card">
+        <h3>Gear help</h3>
+        <p>New to hiking? Borrow poles and daypacks from the club shelf for your first three trips.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Task 4: Grid gallery -->
+  <section id="gallery" class="section">
+    <h2 class="section-title">Recent trails</h2>
+    <div class="gallery">
+      <figure class="tile tile-1 tile-wide"><figcaption>Horsley Hills sunrise</figcaption></figure>
+      <figure class="tile tile-2"><figcaption>Belum caves</figcaption></figure>
+      <figure class="tile tile-3"><figcaption>Nallamala forest</figcaption></figure>
+      <figure class="tile tile-4"><figcaption>Araku valley</figcaption></figure>
+      <figure class="tile tile-5 tile-tall"><figcaption>Gandikota gorge</figcaption></figure>
+      <figure class="tile tile-6"><figcaption>Coastal dunes</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- Task 4: Grid dashboard -->
+  <section id="stats" class="section section-alt">
+    <h2 class="section-title">This season so far</h2>
+    <div class="dashboard">
+      <div class="stat stat-main">
+        <span class="stat-number">42</span>
+        <span class="stat-label">hikes completed</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">318</span>
+        <span class="stat-label">members</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">4.8</span>
+        <span class="stat-label">average rating</span>
+      </div>
+      <div class="stat stat-wide">
+        <span class="stat-number">1,260 km</span>
+        <span class="stat-label">walked together</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="cta-box">
+      <h2>Next hike: Saturday, 6:00 AM</h2>
+      <p>Seats are limited to 15. Email us and we'll confirm within a day.</p>
+      <a href="mailto:hello@trailwise.example" class="btn">hello@trailwise.example</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Trailwise Hiking Club. Built for Web Development Week 2.</p>
+  </footer>
+
+</body>
+</html>

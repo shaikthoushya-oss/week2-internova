@@ -1,0 +1,275 @@
+/* =========================================================
+   Trailwise – Week 2 CSS Fundamentals
+   Task 1: Selectors, colors, backgrounds, fonts, alignment
+   Task 2: Box model
+   Task 3: Flexbox
+   Task 4: Grid
+   Task 5: Media queries
+   ========================================================= */
+
+/* ---------- TASK 1: CSS syntax & variables ---------- */
+:root {
+  --ink: #14212B;
+  --slate: #1F3A4D;
+  --moss: #4F7A34;
+  --sun: #F2B544;
+  --paper: #F7F9F7;
+  --mist: #E4ECE6;
+}
+
+/* Universal selector */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Element selectors */
+body {
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background-color: var(--paper);
+}
+
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.2;
+}
+
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+
+/* ID selector */
+#home {
+  background-color: var(--slate);
+  background-image: linear-gradient(160deg, var(--slate) 55%, var(--moss));
+  color: #fff;
+}
+
+/* ---------- Class selectors: buttons, sections ---------- */
+.btn {
+  display: inline-block;
+  padding: 12px 26px;
+  background-color: var(--sun);
+  color: var(--ink);
+  font-weight: bold;
+  border-radius: 8px;
+  border: 2px solid var(--sun);
+  transition: background-color 0.2s;
+}
+.btn:hover { background-color: #fff; }
+.btn-small { padding: 6px 16px; }
+
+.section {
+  padding: 64px 24px;               /* Task 2: padding */
+  max-width: 1100px;                /* Task 2: width */
+  margin: 0 auto;                   /* Task 2: centering */
+}
+.section-alt {
+  max-width: none;
+  background-color: var(--mist);
+}
+.section-alt > * { max-width: 1100px; margin-left: auto; margin-right: auto; }
+
+.section-title {
+  font-size: 2rem;
+  text-align: center;               /* Task 1: text alignment */
+  margin-bottom: 32px;
+  color: var(--slate);
+}
+
+/* ---------- TASK 3: FLEXBOX – navigation ---------- */
+.site-header { background-color: var(--ink); color: #fff; }
+
+.navbar {
+  display: flex;                    /* flex container */
+  flex-direction: row;
+  justify-content: space-between;   /* horizontal alignment */
+  align-items: center;              /* vertical alignment */
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 24px;
+}
+.logo {
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--sun);
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;                        /* gap */
+}
+.nav-links a:hover { color: var(--sun); }
+.nav-links .btn:hover { color: var(--ink); }
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 96px 24px;
+  text-align: center;
+}
+.hero h1 { font-size: 3.2rem; margin-bottom: 16px; }
+.hero p {
+  max-width: 560px;
+  margin: 0 auto 28px;
+  font-size: 1.15rem;
+  color: #dbe6e0;
+}
+
+/* ---------- TASK 2: BOX MODEL ---------- */
+.about-box {
+  width: 80%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px;
+  background-color: #fff;
+  border: 2px solid var(--moss);
+  border-radius: 16px;                         /* border radius */
+  box-shadow: 0 8px 20px rgba(20, 33, 43, 0.15); /* box shadow */
+  text-align: left;
+}
+.about-box p + p { margin-top: 16px; }
+.highlight {
+  padding: 12px 16px;
+  border-left: 6px solid var(--sun);
+  background-color: var(--paper);
+  font-weight: bold;
+}
+
+/* ---------- TASK 3: FLEXBOX – cards ---------- */
+.card-row {
+  display: flex;
+  flex-wrap: wrap;                  /* responsive wrapping */
+  justify-content: center;
+  align-items: stretch;
+  gap: 24px;
+}
+.card {
+  flex: 1 1 260px;                  /* flex item: grow, shrink, basis */
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 12px;
+  border-top: 6px solid var(--moss);
+  box-shadow: 0 4px 12px rgba(20, 33, 43, 0.12);
+}
+.card h3 { margin-bottom: 8px; color: var(--slate); }
+
+/* ---------- TASK 4: GRID – gallery ---------- */
+.gallery {
+  display: grid;                              /* grid container */
+  grid-template-columns: repeat(4, 1fr);      /* columns */
+  grid-auto-rows: 160px;                      /* rows */
+  gap: 16px;                                  /* grid gap */
+}
+.tile {
+  display: flex;
+  align-items: flex-end;
+  padding: 14px;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: bold;
+}
+.tile figcaption { background-color: rgba(20, 33, 43, 0.65); padding: 4px 10px; border-radius: 6px; }
+.tile-1 { background-image: linear-gradient(135deg, #F2B544, #c9703a); }
+.tile-2 { background-image: linear-gradient(135deg, #3b5f78, #1F3A4D); }
+.tile-3 { background-image: linear-gradient(135deg, #4F7A34, #2c4a1c); }
+.tile-4 { background-image: linear-gradient(135deg, #6aa5a0, #2f6b6b); }
+.tile-5 { background-image: linear-gradient(135deg, #a45d3b, #5e3220); }
+.tile-6 { background-image: linear-gradient(135deg, #d9c58a, #9c8a4d); }
+
+/* grid item placement */
+.tile-wide { grid-column: span 2; }
+.tile-tall { grid-row: span 2; }
+
+/* ---------- TASK 4: GRID – dashboard ---------- */
+.dashboard {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-areas:
+    "main members rating"
+    "wide wide   wide";
+  gap: 20px;
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 28px 16px;
+  background-color: #fff;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(20, 33, 43, 0.12);
+}
+.stat-main { grid-area: main; background-color: var(--slate); color: #fff; }
+.stat:nth-child(2) { grid-area: members; }
+.stat:nth-child(3) { grid-area: rating; }
+.stat-wide { grid-area: wide; }
+.stat-number { font-family: Georgia, serif; font-size: 2.6rem; font-weight: bold; }
+.stat-label { font-size: 0.95rem; }
+
+/* ---------- Call to action & footer ---------- */
+.cta-box {
+  padding: 48px 24px;
+  text-align: center;
+  background-color: var(--moss);
+  color: #fff;
+  border-radius: 20px;
+}
+.cta-box h2 { margin-bottom: 12px; }
+.cta-box p { margin-bottom: 24px; }
+
+.site-footer {
+  padding: 24px;
+  text-align: center;
+  font-size: 0.9rem;
+  background-color: var(--ink);
+  color: #b8c4cc;
+}
+
+/* =========================================================
+   TASK 5: RESPONSIVE DESIGN (Media Queries)
+   Desktop = default styles above
+   ========================================================= */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .hero { padding: 72px 20px; }
+  .hero h1 { font-size: 2.6rem; }
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+  .tile-wide { grid-column: span 2; }
+  .dashboard {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "main main"
+      "members rating"
+      "wide wide";
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 600px) {
+  body { font-size: 0.95rem; }
+
+  .navbar { flex-direction: column; gap: 10px; }   /* stacked navigation */
+  .nav-links { flex-wrap: wrap; justify-content: center; gap: 12px 18px; }
+
+  .hero { padding: 56px 16px; }
+  .hero h1 { font-size: 2rem; }
+
+  .section { padding: 40px 16px; }
+  .section-title { font-size: 1.6rem; margin-bottom: 20px; }
+  .about-box { width: 100%; padding: 20px; }
+
+  .gallery { grid-template-columns: 1fr; grid-auto-rows: 140px; }
+  .tile-wide, .tile-tall { grid-column: auto; grid-row: auto; }
+
+  .dashboard {
+    grid-template-columns: 1fr;
+    grid-template-areas: "main" "members" "rating" "wide";
+  }
+  .stat-number { font-size: 2.1rem; }
+}
